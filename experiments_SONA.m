@@ -1,3 +1,8 @@
+%Add dependencies
+addpath('kmeans')
+addpath('utils')
+addpath('algorithms')
+addpath('MDP_graph_representation')
 
 %precision
 p = 0.00000000000001;
@@ -62,14 +67,14 @@ for i = 1:length(K)
     
   k = K(i);
    
- fprintf('K-means \n');
- [PK_kmeans, RK_Kmeans, S2K_kmeans, K2S_kmeans, PolicyK_kmeans, PolKs_kmeans, err_kmeans(i), t_kmeans(i), t_KMDP_kmeans(i)] = kmeansKMDP(k, P, R, discount, Q, V);
-    
- fprintf('Q d\n');
+ fprintf('Q_d\n');
  [PK_Qd, RK_Qd, S2K_Qd{i}, K2S_Qd{i}, PolicyK_Qd, PolKs_Qd, err_transitive(i), t_transitive(i), t_KMDP_transitive(i)] = QdKMDP(k, p, P, R, discount, Q, V);
                 
- fprintf('TRANSITIVE ASTAR\n');
+ fprintf('a*_d\n');
  [PK_astar, RK_astar, S2K_astar, K2S_astar, PolicyK_astar, PolKs_astar, err_astar(i), t_astar(i), t_KMDP_astar(i)] = aStarKMDP(k, p, P, R, discount, V, Pol); 
+    
+ fprintf('K-means \n');
+ [PK_kmeans, RK_Kmeans, S2K_kmeans, K2S_kmeans, PolicyK_kmeans, PolKs_kmeans, err_kmeans(i), t_kmeans(i), t_KMDP_kmeans(i)] = kmeansKMDP(k, P, R, discount, Q, V);
 
     
 end
@@ -98,8 +103,7 @@ err_kmeans
 t_kmeans
 t_KMDP_kmeans
 
-%Store relevant data
-
+%Store relevant data. Saves the last K-MDP
 
 save('problems/SONA/results/S2K_kmeans.mat', 'S2K_kmeans');
 save('problems/SONA/results/K2S_kmeans.mat', 'K2S_kmeans');
@@ -259,7 +263,9 @@ actions(3) = "C";
 actions(4) = "H";
 min_prob = 0.001;
 
-[G_reduced_model, p_reduced_model] = model_representation(PK_astar, RK_astar, actions, min_prob);
-[G_reduced_policy, p_reduced_policy] = policy_representation(PK_astar, RK_astar, PolicyK_astar, actions, 0.01);
+%TODO: Check why is crashing here
+
+%[G_reduced_model, p_reduced_model] = model_representation(PK_astar, RK_astar, actions, min_prob);
+%[G_reduced_policy, p_reduced_policy] = policy_representation(PK_astar, RK_astar, PolicyK_astar, actions, 0.01);
 
 
