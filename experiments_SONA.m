@@ -151,7 +151,7 @@ err_kmeans = err_kmeans * 100;
             xlabel('K')
             ylabel('time(sec.)');
             title('Sea Otter and Northern Abalone time to compute the K-MDP');
-            legend('Q^*_d K-MDP', 'Q^*_a K-MDP');
+            legend('Q^*_d K-MDP', 'Q^*_a K-MDP', 'k-means++ K-MDP');
             plot_name_fig = strcat('problems/SONA/results/time-compute.fig');
             plot_name_png = strcat('problems/SONA/results/time-compute.png');
             saveas(gcf, plot_name_fig);
@@ -170,7 +170,7 @@ err_kmeans = err_kmeans * 100;
             xlabel('K')
             ylabel('time(sec.)');
             title('Sea Otter and Northern Abalone time to solve the K-MDP');
-            legend('Q^*_d K-MDP', 'Q^*_a K-MDP');
+            legend('Q^*_d K-MDP', 'Q^*_a K-MDP', 'k-means++ K-MDP');
             plot_name_fig = strcat('problems/SONA/results/time-solve.fig');
             plot_name_png = strcat('problems/SONA/results/time-solve.png');
             saveas(gcf, plot_name_fig);
