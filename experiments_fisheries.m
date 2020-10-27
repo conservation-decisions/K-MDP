@@ -179,8 +179,7 @@ err_kmeans = err_kmeans * 100;
             saveas(gcf, plot_name_png);
             
             
-            
-            
+            %Plot reduced model and policy graphs.
             
             
             
