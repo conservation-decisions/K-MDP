@@ -109,12 +109,12 @@ t_KMDP_kmeans
 
 %Store relevant data
 
-save('problems/wolves/results/S2K_Qd_250_251.mat', 'S2K_Qd');
-save('problems/wolves/results/K2S_Qd_250_251.mat', 'K2S_Qd');
-save('problems/wolves/results/S2K_astar_250_251.mat', 'S2K_astar');
-save('problems/wolves/results/K2S_astar_250_251.mat', 'K2S_astar');
-save('problems/wolves/results/S2K_astar_250_251.mat', 'S2K_kmeans');
-save('problems/wolves/results/K2S_astar_250_251.mat', 'K2S_kmeans');
+save('problems/wolves/results/S2K_Qd.mat', 'S2K_Qd');
+save('problems/wolves/results/K2S_Qd.mat', 'K2S_Qd');
+save('problems/wolves/results/S2K_astar.mat', 'S2K_astar');
+save('problems/wolves/results/K2S_astar.mat', 'K2S_astar');
+save('problems/wolves/results/S2K_kmeans.mat', 'S2K_kmeans');
+save('problems/wolves/results/K2S_kmeans.mat', 'K2S_kmeans');
 
 
 err_transitive = err_transitive * 100;
