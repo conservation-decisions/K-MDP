@@ -1,3 +1,9 @@
+%Add dependencies
+addpath('kmeans')
+addpath('utils')
+addpath('algorithms')
+addpath('MDP_graph_representation')
+
 %precision
 p = 0.000000000000001;
 %Discount factor

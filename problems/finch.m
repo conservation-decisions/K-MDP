@@ -44,12 +44,20 @@ for i=1:4
   P{i}=reshape(P{i},2,8);
 end
 
-S=[0;1];
-A=[1;2;3;4];
-X=rectgrid(A,S);
+S=[0;1]; %States
+A=[1;2;3;4]; %Actions
+X=rectgrid(A,S); %JFM: Actions per state
 Ix = getI(X,2);
 R=X(:,2);
-inc = 100;
+%inc = 100;
+inc = 1;
+
+
+%Pb    : belief state transition matrix
+%   Rb    : belief state reward matrix
+%   Sb    : matrix of augmented state variable values
+
+
 
 [b,Pb,Rb,Sb,Xb,Ixb]=amdp(inc,P,R,S,X,Ix);
 model = struct('P',Pb,'R',Rb,'X',Xb,'Ix',Ixb,'d',delta);

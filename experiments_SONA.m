@@ -44,10 +44,6 @@ err_astar = zeros(length(K),1);
 t_astar = zeros(length(K),1);
 t_KMDP_astar = zeros(length(K),1);
 
-err_m = zeros(length(K),1);
-t_m = zeros(length(K),1);
-t_KMDP_m = zeros(length(K),1);
-
 err_kmeans = zeros(length(K),1);
 t_kmeans = zeros(length(K),1);
 t_KMDP_kmeans = zeros(length(K),1);

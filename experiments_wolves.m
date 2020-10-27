@@ -1,3 +1,9 @@
+%Add dependencies
+addpath('kmeans')
+addpath('utils')
+addpath('algorithms')
+addpath('MDP_graph_representation')
+
 %precision
 p = 0.00000000001;
 %Discount factor
@@ -15,6 +21,9 @@ NA = 251;
 P_mat = strcat("problems/wolves/wolves_P_",num2str(NS),"_",num2str(NA),"_min_",num2str(min_pop),"_max_",num2str(max_pop),".mat");
 R_mat = strcat("problems/wolves/wolves_R_",num2str(NS),"_",num2str(NA),"_min_",num2str(min_pop),"_max_",num2str(max_pop),".mat");
 
+
+load(P_mat);
+load(R_mat);
 
 NS = size(P,1);
 
@@ -43,10 +52,6 @@ err_astar = zeros(length(K),1);
 t_astar = zeros(length(K),1);
 t_KMDP_astar = zeros(length(K),1);
 
-err_m = zeros(length(K),1);
-t_m = zeros(length(K),1);
-t_KMDP_m = zeros(length(K),1);
-
 
 err_kmeans = zeros(length(K),1);
 t_kmeans = zeros(length(K),1);
@@ -72,7 +77,7 @@ for i = 1:length(K)
  fprintf('Qd\n');
 [PK_Qd, RK_Qd, S2K_Qd{i}, K2S_Qd{i}, PolicyK_Qd, PolKs_Qd, err_transitive(i), t_transitive(i), t_KMDP_transitive(i)] = QdKMDP(k, p, P, R, discount, Q, V);
                 
- fprintf('TRANSITIVE ASTAR\n');
+ fprintf('a*_d\n');
  [PK_astar, RK_astar, S2K_astar{i}, K2S_astar{i}, PolicyK_astar, PolKs_astar, err_astar(i), t_astar(i), t_KMDP_astar(i)] = aStarKMDP(k, p, P, R, discount, V, Pol); 
 
 fprintf('K-means \n');
