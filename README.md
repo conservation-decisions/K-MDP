@@ -13,9 +13,9 @@ For bug reports and suggestions, please email: jonathan.ferrermestres@csiro.au
 
 [1] Ferrer-Mestres, J.; Dietterich, T. G.; Buffet, O.; and Chades, I.  2020.  Solving K-MDPs. In Proc. International Conference of Automated Planning and Scheduling, 2020.
 
-===========================
+
 TABLE OF CONTENTS
-=========================== 
+ 
 
 1. Requirements
 2. How to install the K-MDP package
@@ -25,9 +25,9 @@ TABLE OF CONTENTS
 6. Acknowledgements
 
 
-=================================
-REQUIREMENTS
-=================================
+
+1.REQUIREMENTS
+
 
 
 MATLAB 
@@ -41,9 +41,9 @@ Tested with MATLAB R2020a and Ubuntu 18.04.
 
 
 
-=================================
-HOW TO INSTALL THE K-MDP PACKAGE
-=================================
+
+2.HOW TO INSTALL THE K-MDP PACKAGE
+
 
 
 The K-MDP package requires MATLAB and MDPtoolbox (future updates will make it MDP solver-independent). The current release has been tested with MATLAB R2019a, R2019b and R2020a.
@@ -62,9 +62,9 @@ Copy (unziping all the files) or download the content into your system. Make sur
 Files named experiment_<problem>.m are examples of how to run the K-MDP algorithms and how to plot statistics (gap and times) for different case studies.
 
 
-=================================
-HOW TO USE THE K-MDP PACKAGE
-=================================
+
+3.HOW TO USE THE K-MDP PACKAGE
+
 
 Start MATLAB on the K-MDP directory and set MATLAB path to include K-MDP and all subdirectories. 
 MDP models from problems folder are specified as transition matrices (SxSxA) and reward matrices (SxSxA) or (SxA). MDP models are stored as .mat files. If you want to test the provided case studies simply use the experiments_<case_study>.m files or load the .mat files from the case studies folders. If you want to apply the K-MDP algorithms to your MDP models then you have to provide the transition and reward matrices with the previously specified format.
@@ -85,9 +85,9 @@ kmeans K-MDP
 
 
 
-=================================
-TODO
-=================================
+
+4.TODO
+
 
 - MDP solver - independent.
 - Add the additional K-MDP algorithms into another branch.
@@ -95,9 +95,9 @@ TODO
 - Test it with Octave.
 - Add option to avoid gap computation (if the user only wants the K-MDP, not to compute statistics).
 
-=================================
-ACKNOWLEDGEMENTS
-=================================
+
+5.ACKNOWLEDGEMENTS
+
 
 
 This is a joint work with Thomas Dietterich, Olivier Buffet and Iadine Chades.
